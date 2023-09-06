@@ -1,4 +1,8 @@
 @import-normalize; /* bring in normalize.css styles */
+@import url(./components/Profile/Profile.css);
+@import url(./components/Statistics/Statistics.css);
+@import url(./components/FriendList/FriendList.css);
+@import url(./components/TransactionHistory/TransactionHistory.css);
 
 body {
   margin: 0;
@@ -7,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightslategrey;
 }
 
 code {

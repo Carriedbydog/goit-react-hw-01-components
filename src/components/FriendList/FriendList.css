@@ -1,0 +1,33 @@
+.friend-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 100px;
+}
+.friend-item {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 20px;
+
+  width: 400px;
+
+  border-radius: 20px;
+  background-color: lightgray;
+}
+.status {
+  color: black;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+.name {
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
