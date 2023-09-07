@@ -1,22 +1,35 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  StyledFlex,
+  StyledImg,
+  StyledList,
+  StyledSpan,
+} from './FriendList.styled';
 
 export const FriendList = ({ friends = [] }) => {
   return (
     <div>
-      <ul className="friend-list">
+      <StyledList>
         {friends.map(friend => (
-          <li className="friend-item" key={friend.id}>
-            <span className="status">{friend.isOnline}</span>
-            <img
-              className="avatar"
-              src={friend.avatar}
-              alt="User avatar"
-              width="48"
-            />
-            <p className="name">{friend.name}</p>
-          </li>
+          <StyledFlex $align="center" $gap="50px" key={friend.id}>
+            <StyledSpan isOnline={friend.isOnline}></StyledSpan>
+            <StyledImg src={friend.avatar} alt="User avatar" width="48" />
+            <p>{friend.name}</p>
+          </StyledFlex>
         ))}
-      </ul>
+      </StyledList>
     </div>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      isOnline: PropTypes.bool,
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };

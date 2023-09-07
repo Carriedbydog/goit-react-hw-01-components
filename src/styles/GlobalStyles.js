@@ -1,9 +1,6 @@
-@import-normalize; /* bring in normalize.css styles */
-@import url(./components/Profile/Profile.css);
-@import url(./components/Statistics/Statistics.css);
-@import url(./components/FriendList/FriendList.css);
-@import url(./components/TransactionHistory/TransactionHistory.css);
+import { createGlobalStyle } from 'styled-components';
 
+export const Global = createGlobalStyle`
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,3 +15,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+`;

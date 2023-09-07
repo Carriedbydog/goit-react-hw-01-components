@@ -1,26 +1,44 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {
+  StyledTable,
+  StyledTd,
+  StyledTh,
+  StyledTr,
+} from './TransactionHistory.styled';
 
 export const TransactionHistory = ({ items = [] }) => {
   return (
     <div>
-      <table className="transaction-history">
+      <StyledTable>
         <thead>
-          <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
-          </tr>
+          <StyledTr>
+            <StyledTh>Type</StyledTh>
+            <StyledTh>Amount</StyledTh>
+            <StyledTh>Currency</StyledTh>
+          </StyledTr>
         </thead>
         {items.map(item => (
           <tbody key={item.id}>
-            <tr>
-              <td>{item.type}</td>
-              <td>{item.amount}</td>
-              <td>{item.currency}</td>
-            </tr>
+            <StyledTr>
+              <StyledTd>{item.type}</StyledTd>
+              <StyledTd>{item.amount}</StyledTd>
+              <StyledTd>{item.currency}</StyledTd>
+            </StyledTr>
           </tbody>
         ))}
-      </table>
+      </StyledTable>
     </div>
   );
+};
+
+TransactionHistory.protoTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      type: PropTypes.string,
+      amount: PropTypes.string,
+      currency: PropTypes.string,
+    })
+  ),
 };
